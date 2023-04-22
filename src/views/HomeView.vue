@@ -98,5 +98,6 @@ const filteredBeers = computed(() => {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 2%;
   }
 </style>

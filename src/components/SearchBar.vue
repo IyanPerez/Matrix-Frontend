@@ -34,12 +34,14 @@ input {
 
 input::placeholder {
   font-family: 'Voltaire', sans-serif;
+  font-size: 1.2rem;
 }
 
 input:focus {
   outline: none;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 1);
   font-family: 'Voltaire', sans-serif;
+  font-size: 1.3rem;
   height: 8vh;
   width: 45%;
 }
