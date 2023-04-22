@@ -1,5 +1,5 @@
 <script setup>
-  import { defineProps, defineEmits, ref, watch } from "vue";
+  import { ref, watch } from "vue";
 
   const props = defineProps({
     queryValue: String,
@@ -16,5 +16,32 @@
 </script>
 
 <template>
-      <input v-model="searchQuery" type="text" placeholder="Filter beers..."/>  
+    <input v-model="searchQuery" type="text" placeholder="&#128269 Filter beers...      ">
 </template>
+
+<style scoped>
+
+input {
+  width: 40%;
+  height: 7vh;
+  border: outset 0.1rem;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+
+input::placeholder {
+  font-family: 'Voltaire', sans-serif;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 1);
+  font-family: 'Voltaire', sans-serif;
+  height: 8vh;
+  width: 45%;
+}
+
+</style>

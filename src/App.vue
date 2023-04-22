@@ -8,5 +8,8 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style lang="scss" scoped>
+*{
+  margin: 0;
+}
 
 </style>
