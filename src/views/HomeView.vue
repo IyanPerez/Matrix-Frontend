@@ -36,7 +36,7 @@ const filteredBeers = computed(() => {
       <a href="https://punkapi.com/" target="_blank" class="header__button"></a>
     </header>
       <div class="wrapper">
-        <Card v-for="beer in filteredBeers" :beer="beer"></Card>
+          <Card v-for="beer in filteredBeers" :beer="beer" :key="beer.id"></Card>
       </div>
   </div>
 </template>

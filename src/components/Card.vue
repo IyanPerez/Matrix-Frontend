@@ -8,12 +8,16 @@ const props = defineProps({
 
 <template>
 	<div class="card">
-		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }">
-		</div>
+		<router-link :to="{ name: 'beerDetails', params: { id: beer.id } }">
+		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
 		<div class="card__content">
-			<p class="card__content__title">{{ beer['name'] }}</p>
-			<p class="card__content__description">{{ beer['tagline'] }}</p>
+			<p class="card__content__title">{{ beer['name'] }} </p>
+			<p class="card__content__tagline">{{ beer['tagline'] }}</p>
+			<p class="card__content__date">First brewed: {{ beer['first_brewed'] }}</p>
+
+			<p class="card__content__abv">Alc. {{ beer['abv'] }}% vol.</p>
 		</div>
+		</router-link>
 	</div>
 </template>
 
@@ -27,8 +31,11 @@ const props = defineProps({
 	&:hover &__content {
 		left: 65%;
 		box-shadow: -0.2rem 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
+		
+		
 	}
 
+	
 	&:hover &__wrapper {
 		right: 5%;
 	}
@@ -68,13 +75,15 @@ const props = defineProps({
 		border: solid 0.1rem;
 		font-family: 'Voltaire', cursive;
 		display: flex;
+		justify-content: space-between;
 		flex-direction: column;
 
 		&__title {
 			font-size: 1em;
 			font-weight: 900;
+			text-decoration: underline;
 		}
-		&__description {
+		&__tagline {
 			font-size: 16px;
 			font-weight: 300;
       	}
