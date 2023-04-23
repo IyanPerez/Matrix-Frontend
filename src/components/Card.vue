@@ -8,13 +8,12 @@ const props = defineProps({
 
 <template>
 	<div class="card">
-		<router-link :to="{ name: 'beerDetails', params: { id: beer.id } }">
+		<router-link :to="{ name: 'beerDetails', params: { id: beer.id }  }">
 		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
 		<div class="card__content">
 			<p class="card__content__title">{{ beer['name'] }} </p>
 			<p class="card__content__tagline">{{ beer['tagline'] }}</p>
 			<p class="card__content__date">First brewed: {{ beer['first_brewed'] }}</p>
-
 			<p class="card__content__abv">Alc. {{ beer['abv'] }}% vol.</p>
 		</div>
 		</router-link>

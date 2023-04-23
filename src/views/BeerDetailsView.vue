@@ -4,12 +4,17 @@ import axios from 'axios';
 
 const beer = ref(null);
 
-const props=defineProps({
-  id: Number,
-})
+const props = defineProps({
+  id: {
+    type: Number,
+    required: true
+  }
+});
 
 onMounted(async () => {
-  const response = await axios.get(`https://api.punkapi.com/v2/beers?ids/${props.id}`);
+  const response = await axios.get(
+    `https://api.punkapi.com/v2/beers/${props.id}`
+  );
   beer.value = response.data[0];
 });
 
@@ -23,13 +28,3 @@ onMounted(async () => {
 </template>
 
 
-
-<!-- <template>
-  <div>
-    <h1>{{ beer.name }}</h1>
-    <h1>prueba</h1>
-    <p v-if="beer.tagline">{{ beer.tagline }}</p>
-    <img :src="beer.image_url" :alt="beer.name" />
-    <p v-if="beer.description">{{ beer.description }}</p>
-  </div>
-</template> -->
