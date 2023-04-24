@@ -28,11 +28,12 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 5rem;
+  height: 7rem;
   background-color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 5%;
   padding: 1rem 2rem;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 2.5rem;

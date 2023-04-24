@@ -26,7 +26,7 @@ const scrollStyle = computed(() => ({
     transition: '0.5s ease-in-out',
     position: 'fixed',
     bottom: '0.5rem',
-    right: '1.5rem',
+    right: '0.5rem',
     zIndex: 999,
   }
 }));

@@ -23,9 +23,19 @@ onMounted(async () => {
 <template>
   <div>
     <h1>Vista de detalle de {{ beer["name"] }}</h1>
-    <p>Beer desciption {{ beer["description"] }}</p>
-    <!-- {{ beer }} -->
+    <div class="image" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
+    <p>{{ beer["description"] }}</p>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.image{
+  height: 20rem;
+  width: 20rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+  
+</style>
 
 
