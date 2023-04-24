@@ -11,5 +11,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: 'https://iyanperez.github.io/Matrix-Frontend/',
+  base: '/Matrix-Frontend/',
 })
