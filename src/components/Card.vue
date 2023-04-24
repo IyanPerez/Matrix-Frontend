@@ -8,14 +8,16 @@ const props = defineProps({
 
 <template>
 	<div class="card">
-		<router-link :to="{ name: 'beerDetails', params: { id: beer.id }  }">
-		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
-		<div class="card__content">
-			<p class="card__content__title">{{ beer['name'] }} </p>
-			<p class="card__content__tagline">{{ beer['tagline'] }}</p>
-			<p class="card__content__date">First brewed: {{ beer['first_brewed'] }}</p>
-			<p class="card__content__abv">Alc. {{ beer['abv'] }}% vol.</p>
-		</div>
+		<router-link style="text-decoration: none; color: inherit;" :to="{ name: 'beerDetails', params: { id: beer.id } }">
+			<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
+			<div class="card__content">
+				<p class="card__content__title">{{ beer['name'] }} </p>
+				<p class="card__content__tagline">{{ beer['tagline'] }}
+				<p class="card__content__date">First brewed: {{ beer['first_brewed'] }}
+				</p>
+				</p>
+				<p class="card__content__abv">Alc. {{ beer['abv'] }}% vol.</p>
+			</div>
 		</router-link>
 	</div>
 </template>
@@ -30,18 +32,16 @@ const props = defineProps({
 	&:hover &__content {
 		left: 65%;
 		box-shadow: -0.2rem 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
-		
-		
+
+
 	}
 
-	
 	&:hover &__wrapper {
 		right: 5%;
 	}
 
+
 	&__wrapper {
-		transition: 0.4s;
-		transition-delay: 0.10s;
 		position: relative;
 		z-index: 100;
 		width: 70%;
@@ -57,8 +57,8 @@ const props = defineProps({
 	}
 
 	&__content {
-		transition: 0.6s;
-		transition-delay: 0.30s;
+		transition:ease-out 0.6s;
+		transition-delay: 0.2s;
 		position: absolute;
 		left: 0;
 		bottom: 0;
@@ -78,15 +78,16 @@ const props = defineProps({
 		flex-direction: column;
 
 		&__title {
-			font-size: 1em;
+			font-size: 1rem;
 			font-weight: 900;
-			text-decoration: underline;
+			font-family: 'Kaushan Script', cursive;
+
 		}
+
 		&__tagline {
 			font-size: 16px;
 			font-weight: 300;
-      	}
-
+		}
 	}
 }
 </style>
