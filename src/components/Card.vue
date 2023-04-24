@@ -8,18 +8,23 @@ const props = defineProps({
 
 <template>
 	<div class="card">
-		<router-link style="text-decoration: none; color: inherit;" :to="{ name: 'beerDetails', params: { id: beer.id } }">
-			<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
-			<div class="card__content">
+		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
+		<div class="card__content">
 				<p class="card__content__title">{{ beer['name'] }} </p>
-				<p class="card__content__tagline">{{ beer['tagline'] }}
-				<p class="card__content__date">First brewed: {{ beer['first_brewed'] }}
-				</p>
-				</p>
-				<p class="card__content__abv">Alc. {{ beer['abv'] }}% vol.</p>
-			</div>
-		</router-link>
+				<p class="card__content__tagline">"{{ beer['tagline'] }}" </p>
+				<p class="card__content__date">First brewed in:
+				<p class="font-underline"> --- {{ beer['first_brewed'] }} --- </p>
+			</p>
+			<p class="card__content__abv">Alc.
+				<p class="bold-font"> {{ beer['abv'] }}</p> %vol.
+			</p>
+		</div>
 	</div>
+<!-- 	<button>
+		<router-link style="text-decoration: none; color: inherit;" :to="{ name: 'beerDetails', params: { id: beer.id } }">
+		more
+		</router-link>
+	</button> -->
 </template>
 
 <style lang="scss" scoped>
@@ -57,7 +62,7 @@ const props = defineProps({
 	}
 
 	&__content {
-		transition:ease-out 0.6s;
+		transition: ease-out 0.6s;
 		transition-delay: 0.2s;
 		position: absolute;
 		left: 0;
@@ -81,13 +86,29 @@ const props = defineProps({
 			font-size: 1rem;
 			font-weight: 900;
 			font-family: 'Kaushan Script', cursive;
+			padding-top: 10%;
 
 		}
 
-		&__tagline {
-			font-size: 16px;
-			font-weight: 300;
+		&__date {}
+
+		&__abv {
+			padding-bottom: 10%;
+			display: flex;
+
+		}
+
+		p {
+			margin: 0;
+		}
+
+		.bold-font {
+			font-weight: 600;
+
+		}
+
+		.font-underline {
+			text-decoration: underline;
 		}
 	}
-}
-</style>
+}</style>
