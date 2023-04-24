@@ -87,7 +87,7 @@ const filteredBeers = computed(() => {
     padding: 0.5rem 0.5rem;
     border-radius: 5px;
     text-decoration: none;
-    background-image: url("../../PunkAPI-logoB&W.svg");
+    background-image: url("../PunkAPI-logoB&W.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

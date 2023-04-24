@@ -40,19 +40,21 @@ const props = defineProps({
 	width: 12rem;
 	height: 18rem;
 	margin: 5rem 4.5rem 2rem 1rem;
-
+	
 	&:hover &__content {
 		left: 70%;
 		box-shadow: -0.2rem 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
+		background-color: burlywood;
 	}
 
 	&:hover &__link {
 		top: -2.3rem;
 		transition-delay: 0.6s;
-
+		
 		&:hover {
 			top: -0.6rem;
 			transition-delay: 0s;
+			background-color: crimson;
 		}
 	}
 
@@ -115,7 +117,7 @@ const props = defineProps({
 		height: 16rem;
 		z-index: 90;
 		overflow: hidden;
-		background-color: burlywood;
+		background-color: antiquewhite;
 		padding-inline: 0.5rem;
 		border-radius: 0 1rem 1rem 0;
 		border: solid 0.1rem;
