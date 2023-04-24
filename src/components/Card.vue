@@ -8,17 +8,16 @@ const props = defineProps({
 
 <template>
 	<div class="card">
-		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` } "></div>
+		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
 
-		<router-link class="router-link"
-			:to="{ name: 'beerDetails', params: { id: beer.id } }">
-			<div class="card__link">
-				Details 
+		<div class="card__link">
+			<router-link class="router-link" :to="{ name: 'beerDetails', params: { id: beer.id } }">
+				Details
+			</router-link>
 
 
 
-			</div>
-		</router-link>
+		</div>
 
 		<div class="card__content">
 			<p class="card__content__title">{{ beer['name'] }} </p>
@@ -27,7 +26,8 @@ const props = defineProps({
 			<p class="font-underline"> --- {{ beer['first_brewed'] }} --- </p>
 			</p>
 			<p class="card__content__abv">Alc.
-			<p class="bold-font"> {{ beer['abv'] }}</p><p class="bold-font">%</p> vol.
+			<p class="bold-font"> {{ beer['abv'] }}</p>
+			<p class="bold-font">%</p> vol.
 			</p>
 		</div>
 	</div>
@@ -39,36 +39,44 @@ const props = defineProps({
 	position: relative;
 	width: 12rem;
 	height: 18rem;
-	margin: 2rem 4.5rem 1rem 1rem;
+	margin: 5rem 4.5rem 2rem 1rem;
 
 	&:hover &__content {
 		left: 70%;
 		box-shadow: -0.2rem 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
 	}
-	
+
 	&:hover &__link {
-		top: -2rem;
+		top: -2.3rem;
+		transition-delay: 0.6s;
+		
 		&:hover {
-			top: -0.7rem;
+			top: -0.6rem;
+			transition-delay: 0s;
 		}
 	}
 
 	&__link {
-		transition: ease-out 0.7s;
-		transition-delay: 0.2s;
+		transition: ease-out 0.4s;
 		position: relative;
 		left: 0.5rem;
-		top: -3rem;
+		top: -4rem;
 		width: 3.1rem;
 		z-index: 90;
 		overflow: hidden;
 		background-color: brown;
 		color: wheat;
-		padding: 0.6rem 1rem;
+		padding: 0.5rem 0.5rem 1.7rem 0.5rem;
 		border-radius: 0 0 0.5rem 0.5rem;
 		border: solid 0.13rem;
+		background-image: url("../assets/img/downArrow.png");
+		background-size: 1.8rem;
+		background-position-y: 2rem;
+		background-position-x: 1.2rem;
+		background-repeat: no-repeat;
+
 	}
-	
+
 	.router-link {
 		cursor: pointer;
 		text-decoration: none;
@@ -94,7 +102,7 @@ const props = defineProps({
 		box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.2);
 
 	}
-	
+
 	&__content {
 		transition: ease-out 0.6s;
 		transition-delay: 0.3s;
@@ -129,15 +137,19 @@ const props = defineProps({
 			display: flex;
 
 		}
+
 		.bold-font {
 			font-weight: 600;
-			
-		}		
+
+		}
+
 		.font-underline {
 			text-decoration: underline;
 		}
+
 		p {
 			margin: 0;
 		}
 	}
-}</style>
+}
+</style>

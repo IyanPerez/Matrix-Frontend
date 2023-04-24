@@ -1,29 +1,28 @@
 <script setup>
-  import { ref, watch } from "vue";
+import { ref, watch } from "vue";
 
-  const props = defineProps({
-    queryValue: String,
-  });
+const props = defineProps({
+  queryValue: String,
+});
 
-  const emit = defineEmits(["update:queryValue"]);
+const emit = defineEmits(["update:queryValue"]);
 
-  const searchQuery = ref(props.queryValue);
+const searchQuery = ref(props.queryValue);
 
-  watch(searchQuery, newValue => {
-    emit("update:queryValue", newValue);
-  });
+watch(searchQuery, newValue => {
+  emit("update:queryValue", newValue);
+});
 
 </script>
 
 <template>
-    <input v-model="searchQuery" type="text" placeholder="&#128269 Filter beers...">
+  <input v-model="searchQuery" type="text" placeholder="&#128269 Filter beers...">
 </template>
 
 <style scoped>
-
 input {
   width: 40%;
-  height: 7vh;
+  height: 3rem;
   border: outset 0.1rem;
   font-size: 1.2rem;
   padding: 0.5rem;
@@ -34,16 +33,14 @@ input {
 
 input::placeholder {
   font-family: 'Voltaire', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 input:focus {
   outline: none;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 1);
   font-family: 'Voltaire', sans-serif;
-  font-size: 1.3rem;
-  height: 8vh;
+  height: 3.3rem;
   width: 45%;
 }
-
 </style>

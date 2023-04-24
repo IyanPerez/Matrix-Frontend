@@ -60,7 +60,7 @@ const filteredBeers = computed(() => {
   top: 0;
   left: 0;
   width: 100%;
-  height: 15%;
+  height: 6rem;
   background-color: white;
   display: flex;
   justify-content: space-around;
@@ -79,7 +79,7 @@ const filteredBeers = computed(() => {
   }
 
   &__button {
-    height: 7vh;
+    height: 3rem;
     width: 4%;
     background-color: antiquewhite;
     color: #000000;
@@ -91,12 +91,13 @@ const filteredBeers = computed(() => {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    transition: 0.5s;
 
 
     &:hover {
       background-color: burlywood;
-      height: 8vh;
-      transition: 0.5s;
+      height: 3.5rem;
+      border: none;
     }
   }
 }
