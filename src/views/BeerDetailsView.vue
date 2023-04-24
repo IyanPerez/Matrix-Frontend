@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-const beer = ref(null);
+const beer = ref([]);
 
 const props = defineProps({
   id: {
@@ -22,8 +22,9 @@ onMounted(async () => {
 
 <template>
   <div>
-    <h1>prueba</h1>
-    {{ beer }}
+    <h1>Vista de detalle de {{ beer["name"] }}</h1>
+    <p>Beer desciption {{ beer["description"] }}</p>
+    <!-- {{ beer }} -->
   </div>
 </template>
 
