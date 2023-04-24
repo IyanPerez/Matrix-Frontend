@@ -8,46 +8,80 @@ const props = defineProps({
 
 <template>
 	<div class="card">
-		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` }"></div>
+		<div class="card__wrapper" :style="{ 'background-image': `url(${beer['image_url']})` } "></div>
+
+		<router-link class="router-link"
+			:to="{ name: 'beerDetails', params: { id: beer.id } }">
+			<div class="card__link">
+				Details 
+
+
+
+			</div>
+		</router-link>
+
 		<div class="card__content">
-				<p class="card__content__title">{{ beer['name'] }} </p>
-				<p class="card__content__tagline">"{{ beer['tagline'] }}" </p>
-				<p class="card__content__date">First brewed in:
-				<p class="font-underline"> --- {{ beer['first_brewed'] }} --- </p>
+			<p class="card__content__title">{{ beer['name'] }} </p>
+			<p class="card__content__tagline">"{{ beer['tagline'] }}" </p>
+			<p class="card__content__date">First brewed in:
+			<p class="font-underline"> --- {{ beer['first_brewed'] }} --- </p>
 			</p>
 			<p class="card__content__abv">Alc.
-				<p class="bold-font"> {{ beer['abv'] }}</p> %vol.
+			<p class="bold-font"> {{ beer['abv'] }}</p><p class="bold-font">%</p> vol.
 			</p>
 		</div>
 	</div>
-<!-- 	<button>
-		<router-link style="text-decoration: none; color: inherit;" :to="{ name: 'beerDetails', params: { id: beer.id } }">
-		more
-		</router-link>
-	</button> -->
 </template>
 
 <style lang="scss" scoped>
 .card {
+
 	position: relative;
 	width: 12rem;
 	height: 18rem;
 	margin: 2rem 4.5rem 1rem 1rem;
 
 	&:hover &__content {
-		left: 65%;
+		left: 70%;
 		box-shadow: -0.2rem 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
-
-
+	}
+	
+	&:hover &__link {
+		top: -2rem;
+		&:hover {
+			top: -0.7rem;
+		}
 	}
 
-	&:hover &__wrapper {
-		right: 5%;
+	&__link {
+		transition: ease-out 0.7s;
+		transition-delay: 0.2s;
+		position: relative;
+		left: 0.5rem;
+		top: -3rem;
+		width: 3.1rem;
+		z-index: 90;
+		overflow: hidden;
+		background-color: brown;
+		color: wheat;
+		padding: 0.6rem 1rem;
+		border-radius: 0 0 0.5rem 0.5rem;
+		border: solid 0.13rem;
+	}
+	
+	.router-link {
+		cursor: pointer;
+		text-decoration: none;
+		color: inherit;
+		font-family: 'Kaushan Script', cursive;
+
 	}
 
 
 	&__wrapper {
 		position: relative;
+		transition-delay: 0.15s;
+		transition: 1s;
 		z-index: 100;
 		width: 70%;
 		height: 100%;
@@ -60,10 +94,10 @@ const props = defineProps({
 		box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.2);
 
 	}
-
+	
 	&__content {
 		transition: ease-out 0.6s;
-		transition-delay: 0.2s;
+		transition-delay: 0.3s;
 		position: absolute;
 		left: 0;
 		bottom: 0;
@@ -90,25 +124,20 @@ const props = defineProps({
 
 		}
 
-		&__date {}
-
 		&__abv {
 			padding-bottom: 10%;
 			display: flex;
 
 		}
-
-		p {
-			margin: 0;
-		}
-
 		.bold-font {
 			font-weight: 600;
-
-		}
-
+			
+		}		
 		.font-underline {
 			text-decoration: underline;
+		}
+		p {
+			margin: 0;
 		}
 	}
 }</style>

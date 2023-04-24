@@ -8,22 +8,18 @@
     👉 Unificar la tipografía de todas las etiquetas de una web
 */
 /* Aquí definimos las Custom properties */
-// :root {
-//   --negro: hsl(0, 0%, 8%);
-//   --blanco: hsl(0, 0%, 98%);
-//   --gris: hsl(0, 0%, 41%);
+:root {
+  --negro: hsl(0, 0%, 8%);
+  --blanco: hsl(0, 0%, 98%);
+  --gris: hsl(0, 0%, 41%);
+}
 
-//   /* Tipografía */
-//   --tipo-principal: 'Epilogue', sans-serif;
-//   --tipo-secundaria: Verdana;
-// }
-
-// /* Las adaptamos al modo oscuro */
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     --negro: #ececec;
-//   }
-// }
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
 /* Opcional */
 /* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
 /* Opcional */

@@ -16,7 +16,7 @@
 </script>
 
 <template>
-    <input v-model="searchQuery" type="text" placeholder="&#128269 Filter beers...      ">
+    <input v-model="searchQuery" type="text" placeholder="&#128269 Filter beers...">
 </template>
 
 <style scoped>

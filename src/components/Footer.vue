@@ -6,19 +6,28 @@
     <div class="footer">
       <p>Beers4Me© was made using PunkApi as the data provider <br> Web page created by: Iyán Pérez</p>
       <div class="btn-group">
-        <button>GitHub</button>
-        <button>Linkedin</button>
-        <button>Email</button>
+        <button>
+        <a href="https://github.com/IyanPerez" target="_blank">
+            GitHub
+        </a> 
+        </button>
+        <button>
+        <a href="https://www.linkedin.com/in/iyanperez/" target="_blank">
+          Linkedin
+        </a> 
+        </button>
       </div>
     </div>
   </template>
   
   <style lang="scss" scoped>
+  @import "../assets/scss/Reset.scss";
+
   .footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 11vh;
+    height: 13vh;
     background-color: white;
     display: flex;
     justify-content: space-around;
