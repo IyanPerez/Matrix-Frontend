@@ -49,7 +49,7 @@ const props = defineProps({
 	&:hover &__link {
 		top: -2.3rem;
 		transition-delay: 0.6s;
-		
+
 		&:hover {
 			top: -0.6rem;
 			transition-delay: 0s;
