@@ -23,10 +23,10 @@ watch(searchQuery, newValue => {
 input {
   width: 40%;
   height: 3rem;
-  border: outset 0.1rem;
-  font-size: 1.2rem;
   padding: 0.5rem;
+  border: outset 0.1rem;
   border-radius: 0.5rem;
+  font-size: 1.2rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   transition: 0.2s;
 }

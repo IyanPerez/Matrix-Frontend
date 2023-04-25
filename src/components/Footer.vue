@@ -24,17 +24,17 @@
 @import "../assets/scss/Reset.scss";
 
 .footer {
-  z-index: 110;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 7rem;
-  background-color: white;
+  z-index: 110;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5%;
   padding: 1rem 2rem;
+  background-color: white;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
   margin-top: 2.5rem;
 
@@ -56,7 +56,6 @@
       margin-left: 1rem;
       cursor: pointer;
       font-family: 'Voltaire', cursive;
-
 
       &:hover {
         background-color: burlywood;

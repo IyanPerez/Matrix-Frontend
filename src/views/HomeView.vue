@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, toRefs, onBeforeMount, onMounted, ref, computed } from 'vue';
+import { reactive, toRefs, onBeforeMount, computed } from 'vue';
 import Card from '../components/Card.vue';
 import SearchBar from '../components/SearchBar.vue';
 import BeersService from '../services/BeersService.js';
@@ -21,8 +21,10 @@ onBeforeMount(async () => {
 });
 
 const filteredBeers = computed(() => {
+
   if (!searchQuery.value) return beers.value
-  return beers.value.filter(beer =>
+
+  else return beers.value.filter(beer =>
     beer['name'].toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 })
@@ -31,17 +33,19 @@ const filteredBeers = computed(() => {
 
 <template>
   <div class="main_container">
+
     <header class="header">
       <h1 class="header__title">Beers4Me</h1>
       <SearchBar class="header_searchbar" v-model="searchQuery" />
       <a href="https://punkapi.com/" target="_blank" class="header__button"></a>
     </header>
+
     <div class="wrapper">
       <Card v-for="beer in filteredBeers" :beer="beer" :key="beer.id"></Card>
     </div>
+
   </div>
-  <ScrollTop />
-  <Footer/>
+  <ScrollTop /> <Footer />
 </template>
 
 <style lang="scss" scoped>
@@ -61,14 +65,14 @@ const filteredBeers = computed(() => {
   left: 0;
   width: 100%;
   height: 6rem;
-  background-color: white;
+  z-index: 110;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 4%;
-  z-index: 110;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding-inline: 2%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
   &__title {
     font-size: 2rem;
@@ -108,4 +112,5 @@ const filteredBeers = computed(() => {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2%;
-}</style>
+}
+</style>

@@ -1,4 +1,3 @@
-
 <script setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
 
@@ -35,26 +34,25 @@ const scrollStyle = computed(() => ({
 
 <template>
   <div class="scroll-top" :style="scrollStyle.show">
-    <button @click="scrollTop">
-    </button>
+    <button @click="scrollTop"></button>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .scroll-top button {
-  background: transparent;
   width: 3.5rem;
   height: 3.5rem;
   border: none;
   cursor: pointer;
+  background: none;
   background-image: url("../assets/img/topArrow.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  transition: 0.3s ease-in-out;
   &:hover {
     width: 4.2rem;
     height: 4.2rem;
-    transition: 0.3s ease-in-out;
   }
 }
 
